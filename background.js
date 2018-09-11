@@ -15,6 +15,7 @@ chrome.contextMenus.create({
 function copyBack(){
     chrome.tabs.getSelected(function(tab){
 
+        // console.log("tag_title = " + tab.title + ", tab_url = " + tab.url);
         var a = document.createElement('a');
         var attr_href = document.createAttribute('href');
         attr_href.value = tab.url;
@@ -50,5 +51,6 @@ function copyBack(){
 
 
         document.body.removeChild(agent_button);
+        document.body.removeChild(a);
     });
 }
